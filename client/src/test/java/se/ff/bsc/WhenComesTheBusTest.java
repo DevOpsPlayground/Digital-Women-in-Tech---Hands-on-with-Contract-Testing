@@ -14,10 +14,12 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.util.HashMap;
+import groovy.lang.GroovyObject;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 
 
 public class WhenComesTheBusTest {
@@ -36,7 +38,7 @@ public class WhenComesTheBusTest {
                 .integerType("eta",4)
                 .asBody();
 
-        return builder
+        RequestResponsePact result =  builder
                 .given("There is a bus with number 613 arriving to Hammersmith bus station")
                 .uponReceiving("A request for eta for bus number 613 to Hammersmith bus station")
                 .path("/bus/Hammersmith/613")
@@ -46,6 +48,7 @@ public class WhenComesTheBusTest {
                 .headers(headers)
                 .body(etaResults).toPact();
 
+        return result;
     }
 
     @Test

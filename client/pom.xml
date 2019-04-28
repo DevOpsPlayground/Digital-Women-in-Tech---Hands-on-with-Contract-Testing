@@ -27,8 +27,8 @@
     <dependency>
       <groupId>au.com.dius</groupId>
       <artifactId>pact-jvm-consumer-junit_2.12</artifactId>
-      <version>3.5.10</version>
-      <scope>test</scope>
+      <version>3.6.5</version>
+      <!--<version>3.5.10</version>-->
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.json/json -->
     <dependency>
@@ -37,16 +37,26 @@
       <version>20171018</version>
     </dependency>
 
+
+    <!-- https://mvnrepository.com/artifact/au.com.dius/pact-jvm-model -->
+    <dependency>
+      <groupId>au.com.dius</groupId>
+      <artifactId>pact-jvm-model</artifactId>
+      <version>3.6.5</version>
+    </dependency>
+
+
+
   </dependencies>
   <build>
   <plugins>
     <plugin>
 <!-- mvn pact:publish  -->
       <groupId>au.com.dius</groupId>
-      <artifactId>pact-jvm-provider-maven_2.11</artifactId>
-      <version>3.5.10</version>
+      <artifactId>pact-jvm-provider-maven_2.12</artifactId>
+      <version>3.5.11</version>
       <configuration>
-        <pactDirectory>../pacts</pactDirectory> <!-- Defaults to ${project.build.directory}/pacts -->
+        <pactDirectory>/Users/samer/devops/pact3/client/target/pacts</pactDirectory> <!-- Defaults to ${project.build.directory}/pacts -->
         <pactBrokerUrl>http://localhost:8113</pactBrokerUrl>
         <projectVersion>${project.version}</projectVersion> <!-- Defaults to ${project.version} -->
         <trimSnapshot>true</trimSnapshot> <!-- Defaults to false -->
