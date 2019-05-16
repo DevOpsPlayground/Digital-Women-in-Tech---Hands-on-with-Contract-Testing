@@ -56,7 +56,7 @@
       <artifactId>pact-jvm-provider-maven_2.12</artifactId>
       <version>3.5.11</version>
       <configuration>
-        <pactDirectory>/Users/samer/devops/pact3/client/target/pacts</pactDirectory> <!-- Defaults to ${project.build.directory}/pacts -->
+        <pactDirectory>client/target/pacts</pactDirectory> <!-- Defaults to ${project.build.directory}/pacts -->
         <pactBrokerUrl>http://localhost:8113</pactBrokerUrl>
         <projectVersion>${project.version}</projectVersion> <!-- Defaults to ${project.version} -->
         <trimSnapshot>true</trimSnapshot> <!-- Defaults to false -->
