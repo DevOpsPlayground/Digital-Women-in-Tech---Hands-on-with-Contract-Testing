@@ -1,8 +1,6 @@
 package se.ff.bs;
 
-/**
- * Created by set842 on 29/11/17.
- */
+
 public class BusInfo {
     String station;
     String nr;
