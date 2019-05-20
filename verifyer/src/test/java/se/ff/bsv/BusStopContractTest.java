@@ -17,7 +17,7 @@ import java.util.Map;
 
 @RunWith(PactRunner.class) // Say JUnit to run tests with custom Runner
 @Provider("BusService") // Set up name of tested provider
-@PactFolder("./target/pacts") // Point where to find pacts (See also section Pacts source in documentation)
+@PactFolder("../client/target/pacts") // Point where to find pacts (See also section Pacts source in documentation)
 
 public class BusStopContractTest {
 
