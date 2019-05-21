@@ -105,13 +105,11 @@ This class uses port 8111 as default port. It has the method checkEta() that che
 ![](Images/WhenComesTheBusResult.png) 
 
 #Pact Test WhenComesTheBusTest.java
-Ok let’s now create the pact file.  The test that we are going to write is based on an example I picked from pact-jvm. 
-
+Ok let’s now create the pact file.  The test that we are going to write is based on an example I picked from pact-jvm.  
 20.	Let’s clear the path by typing **cd** and then **Enter**.  
 21.	Now let’s write our test class WhenComesTheBusTest.java. I have already created a shell class for that. Type in **cd $BUSTEST**, press **Enter**.  
 22. Type in **vi WhenComesTheBusTest.java** and then press **Enter**.  
-23.	You should now see an empty class **WhenComesTheBusTest.java**. Copy the code below and paste it in the vi editor. (**Press i to make vi in edit mode**).  
-
+23.	You should now see an empty class **WhenComesTheBusTest.java**. Copy the code below and paste it in the vi editor. (**Press i to make vi in edit mode**).   
 In the code below  we add the pact rule to represent our provider. The hostname and port are optional. If left out, it will default to 127.0.0.1 and a random available port. You can get the URL and port from the pact provider rule.
  We are using Port 8112 which will create a mock service. And when we run the pact verification method, doTest(), the mock service will get populated with the information that we setup in the Pact annotated method. 
 
@@ -160,9 +158,7 @@ In the **@PactVerification()** method, we first set the root directory for the p
 24.	Save the above code by typing  ‘**:wq** ’ and press **Enter**.   
 25.	Run the testcase WhenComesTheBusTest.java by going back to root directory. Type ‘ **cd** ‘ press Enter. Type or paste **cd $CLIENT**, press **Enter**.   
 26.	 Type ‘ **mvn test** ‘ and press **Enter**. You should see the below result in the terminal.   
-
-![](Images/WhenComesTheBusTestResult.png) 
-
+![](Images/WhenComesTheBusTestResult.png)  
 27.	By running the above pact test will create a json pact file in the location **/PactTest/client/target/pacts**.  
 28.	Once you’re in that directory, type the command **vi BusServiceClient-BusService.json**.  
 
@@ -200,12 +196,9 @@ We run BusStroContractTest.java class to verify that our live system works accor
 43.	Type **vi BusStopContractTest.java**.  
 ![](Images/BusStopContractTest.png)
 
-It contains a **@State("There is a bus with number 613 arriving to Hammersmith bus station")**, which is given in the **WhenComesTheBus.java** class. This state was also given in the pact file as Provider state. The **@state** annotation is given in test to ensure for example to insert something in the database or other things to be in place for this test to work.  I have kept this test simple hence nothing is being inserted in this test and the state is just given as a statement. But if this state is removed entirely from this class, it will fail since in the contract we have given the provider to be in the state of  “There is a bus with number 613 arriving to Hammersmith bus station”.
-
-**@TestTarget** annotation targets the system to be tested. In the above example we are pointing it to port that the live system is running on. This test also needs to have access to the pact file in order for it to verify in the annotation @PactFolder("../client/target/pacts"). It is also necessary for it to be given the same name in @Provider("BusService") that is in the pact file for the provider. 
-
-Let run this test now. 
-
+It contains a **@State("There is a bus with number 613 arriving to Hammersmith bus station")**, which is given in the **WhenComesTheBus.java** class. This state was also given in the pact file as Provider state. The **@state** annotation is given in test to ensure for example to insert something in the database or other things to be in place for this test to work.  I have kept this test simple hence nothing is being inserted in this test and the state is just given as a statement. But if this state is removed entirely from this class, it will fail since in the contract we have given the provider to be in the state of  “There is a bus with number 613 arriving to Hammersmith bus station”.  
+**@TestTarget** annotation targets the system to be tested. In the above example we are pointing it to port that the live system is running on. This test also needs to have access to the pact file in order for it to verify in the annotation @PactFolder("../client/target/pacts"). It is also necessary for it to be given the same name in @Provider("BusService") that is in the pact file for the provider.  
+Let run this test now.  
 44.	 Let’s go to main directory verify i.e. **PactTest/verifier**.  
 45. 	Type **mvn test** and press **Enter**.  
 
