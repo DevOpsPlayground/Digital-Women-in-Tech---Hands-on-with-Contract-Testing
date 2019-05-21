@@ -79,8 +79,7 @@ Once you are successfully logged in to your instance, follow the steps below to 
 ![](Images/BusCtrl.png)
 
 This is the bus application (spring boot) that has a controller, BusCtrl. This service takes station and bus number as input variables and then it uses the method getEtaBasedOnGpsAndOtherAdancedStuff(). This method returns an integer which then creates a BusInfo object with station number and the time left.
-
-6. Type ‘ **:q** ‘ and press **Enter**. This will take you back to your present working directory.   
+6. Type ‘ **:q** ‘ and press **Enter**. This will take you back to your present working directory.    
 7. Type ‘**cd**’ and press **Enter**.   
 8. Type **cd $BUSSPRINGBOOT**, Press **Enter**.  
 9. Now start the spring boot service by giving the command: **mvn spring-boot:run**.  
@@ -90,6 +89,7 @@ This is the bus application (spring boot) that has a controller, BusCtrl. This s
 ##Class WhenComesTheBus.java (Client)
 
 We can now write out client side test.  
+
 11. Open a new tab in your browser and enter address of your linux instance again and log in.  
 12.	Copy paste **cd $BUSCOMES**. Click **Enter**.  
 13.	Type **vi WhenComesTheBus.java**.  
