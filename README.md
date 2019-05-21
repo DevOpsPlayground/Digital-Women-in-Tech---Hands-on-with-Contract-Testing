@@ -14,11 +14,17 @@ LinkedIn: [Let's connect](https://www.linkedin.com/in/samer-naqvi-8b27a3/)
 
 #Requirements
 •	Jdk 
+
 •	Code editor (e.g. Eclipse, Vi) basic knowledge
+
 •	Git
+
 •	Maven
+
 •	Chrome or any other browser
+
 •	Basic Java knowledge
+
 •	Basic Linux cli knowledge
 
 #Setup
@@ -26,11 +32,15 @@ The remote machine will have all the programs you need to follow this session. O
 If you wish to use your own machine on this playground, please make sure you have all the applications and/or programs listed on the requirements and clone or download this repository.
 
 #Further Reading
-•	Official Pact Documentation
-•	Contract Tests vs Functional Tests
-•	Getting started with Pact and Consumer Driven Contract Testing
-•	Pact jvm consumer junit
-•	Pact Broker
+•	[Official Pact Documentation](https://docs.pact.io/)
+
+•	[Contract Tests vs Functional Tests](https://docs.pact.io/best_practices/consumer/contract_tests_not_functional_tests)
+
+•	[Getting started with Pact and Consumer Driven Contract Testing](https://dius.com.au/2016/02/03/microservices-pact/)
+
+•	[Pact jvm consumer junit](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit)
+
+•	[Pact Broker](https://github.com/pact-foundation/pact-broker-docker)
 
 #Survey Link
 We would love to hear your feedback and make improvements on the way we deliver our playground session. Please click the survey to participate.
@@ -46,16 +56,22 @@ Once you are successfully logged in to your instance, follow the steps below to 
  
 2.	Let’s first set the paths as variables. 
 
-I.	BUSAPP=”PactTest/bs/src/main/java/se/ff/bs”
-II.	BUSSPRINGBOOT=”pact/PactTest/bs”
-III.	BUSCOMES=”PactTest/client/src/main/java/se/ff/bsc”
-IV.	BUSTEST=” PactTest/client/src/test/java/se/ff/bsc”
-V.	CLIENT=”PactTest/client”
-VI.	BROKER=” PactTest/dockerpactbroker”
-VII.	VERIFY= “PactTest/verifyer/src/test/java/se/ff/bsv”
+  I.	BUSAPP=”PactTest/bs/src/main/java/se/ff/bs”
+
+  II.	BUSSPRINGBOOT=”pact/PactTest/bs”
+
+  III.	BUSCOMES=”PactTest/client/src/main/java/se/ff/bsc”
+
+  IV.	BUSTEST=” PactTest/client/src/test/java/se/ff/bsc”
+
+  V.	CLIENT=”PactTest/client”
+
+  VI.	BROKER=” PactTest/dockerpactbroker”
+
+  VII.	VERIFY= “PactTest/verifyer/src/test/java/se/ff/bsv”
 
 
-3.	Type cd $BUSAPP. Click Enter 
+3.	Type cd **$BUSAPP**. Click Enter 
 4.	Type or copy/paste vi BusCtrl.java , Press Enter
 5.	The above step will open the class BusCtrl.java in vi terminal, which will look like this. 
   
