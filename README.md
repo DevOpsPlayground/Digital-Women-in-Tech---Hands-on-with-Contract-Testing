@@ -56,19 +56,19 @@ Once you are successfully logged in to your instance, follow the steps below to 
  
 2.	Let’s first set the paths as variables. 
 
-  I.	BUSAPP=”*PactTest/bs/src/main/java/se/ff/bs*”
+  I.	BUSAPP=”**PactTest/bs/src/main/java/se/ff/bs**”
 
-  II.	BUSSPRINGBOOT=”*pact/PactTest/bs*”
+  II.	BUSSPRINGBOOT=”**pact/PactTest/bs**”
 
-  III.	BUSCOMES=”*PactTest/client/src/main/java/se/ff/bsc*”
+  III.	BUSCOMES=”**PactTest/client/src/main/java/se/ff/bsc**”
 
-  IV.	BUSTEST=”*PactTest/client/src/test/java/se/ff/bsc*”
+  IV.	BUSTEST=”**PactTest/client/src/test/java/se/ff/bsc**”
 
-  V.	CLIENT=”*PactTest/client*”
+  V.	CLIENT=”**PactTest/client**”
 
-  VI.	BROKER=”*PactTest/dockerpactbroker*”
+  VI.	BROKER=”**PactTest/dockerpactbroker**”
 
-  VII.	VERIFY= “*PactTest/verifyer/src/test/java/se/ff/bsv*”
+  VII.	VERIFY= “**PactTest/verifyer/src/test/java/se/ff/bsv**”
 
 
 3.	Type cd **$BUSAPP**. Click Enter 
