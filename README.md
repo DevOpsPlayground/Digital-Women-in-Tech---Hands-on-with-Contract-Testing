@@ -57,19 +57,19 @@ Once you are successfully logged in to your instance, follow the steps below to 
 
 2.	Let’s first set the paths as variables. 
 
-  I.	BUSAPP=”**PactTest/bs/src/main/java/se/ff/bs**”
+  - BUSAPP=”**PactTest/bs/src/main/java/se/ff/bs**”
 
-  II.	BUSSPRINGBOOT=”**PactTest/bs**”
+  - BUSSPRINGBOOT=”**PactTest/bs**”
 
-  III.	BUSCOMES=”**PactTest/client/src/main/java/se/ff/bsc**”
+  - BUSCOMES=”**PactTest/client/src/main/java/se/ff/bsc**”
 
-  IV.	BUSTEST=”**PactTest/client/src/test/java/se/ff/bsc**”
+  - BUSTEST=”**PactTest/client/src/test/java/se/ff/bsc**”
 
-  V.	CLIENT=”**PactTest/client**”
+  - CLIENT=”**PactTest/client**”
 
-  VI.	BROKER=”**PactTest/dockerpactbroker**”
+  - BROKER=”**PactTest/dockerpactbroker**”
 
-  VII.	VERIFY= “**PactTest/verifyer/src/test/java/se/ff/bsv**”
+  - VERIFY= “**PactTest/verifyer/src/test/java/se/ff/bsv**”
 
 
 3.	Type cd **$BUSAPP**. Click Enter 
@@ -87,11 +87,17 @@ This is the bus application (spring boot) that has a controller, BusCtrl. This s
 **http://<address of your instance>:8111/bus/Central_station/60**
 
 ##Class WhenComesTheBus.java (Client)
+
 We can now write out client side test.
-11.	Open a new tab in your browser and enter address of your linux instance again and log in.  
+
+11.	Open a new tab in your browser and enter address of your linux instance again and log in. 
+
 12.	Copy paste **cd $BUSCOMES**. Click **Enter**
+
 13.	Type **vi WhenComesTheBus.java**
+
 14.	The class WhenComesTheBus.java will open in the vi editor.
+15.	
 ![](Images/WhenComesTheBus.png) 
 
 This class uses port 8111 as default port. It has the method checkEta() that checks estimated time for the station Hammersmith and bus number 613. It than prints out the results. CheckEta() method looks at local host, port, station and the bus number. It than makes an HTTP request and transform it into json and extract the integer from the result.  
