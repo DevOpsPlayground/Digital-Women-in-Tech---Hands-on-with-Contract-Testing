@@ -52,10 +52,11 @@ We would love to hear your feedback and make improvements on the way we deliver 
 
 #Pact Project 
 Once you are successfully logged in to your instance, follow the steps below to open the project.
-1.	On the terminal write ‘ls’ and press Enter, to make sure your Pact project is present. 
+
+1. On the terminal write ‘ls’ and press Enter, to make sure your Pact project is present. 
  ![](Images/Playground_repo.png)
 
-2.	Let’s first set the paths as variables. 
+2. Let’s first set the paths as variables. 
 
   - BUSAPP=”**PactTest/bs/src/main/java/se/ff/bs**”
 
@@ -72,7 +73,7 @@ Once you are successfully logged in to your instance, follow the steps below to 
   - VERIFY= “**PactTest/verifyer/src/test/java/se/ff/bsv**”
 
 
-3.	Type cd **$BUSAPP**. Click Enter 
+3. Type cd **$BUSAPP**. Click Enter 
 4.	Type or copy/paste **vi BusCtrl.java** , Press **Enter**
 5.	The above step will open the class BusCtrl.java in vi terminal, which will look like this. 
   ![](Images/BusCtrl.png)
@@ -90,30 +91,31 @@ This is the bus application (spring boot) that has a controller, BusCtrl. This s
 
 We can now write out client side test.
 
-11.	Open a new tab in your browser and enter address of your linux instance again and log in. 
-
+11.	Open a new tab in your browser and enter address of your linux instance again and log in.
 12.	Copy paste **cd $BUSCOMES**. Click **Enter**
-
 13.	Type **vi WhenComesTheBus.java**
-
 14.	The class WhenComesTheBus.java will open in the vi editor.
-15.	
+
 ![](Images/WhenComesTheBus.png) 
 
 This class uses port 8111 as default port. It has the method checkEta() that checks estimated time for the station Hammersmith and bus number 613. It than prints out the results. CheckEta() method looks at local host, port, station and the bus number. It than makes an HTTP request and transform it into json and extract the integer from the result.  
-15.	Type  ‘ **:q**  ‘ and press Enter to exit the vi editor
-16.	Go back to the parent working directory by typing ‘**cd**’ and press **Enter**.
-17.	Type or paste **cd $CLIENT**, press **Enter**.
-18.	Let’s run the class WhenComesTheBus.java by typing the command **mvn exec:java -Dexec.mainClass=se.ff.bsc.WhenComesTheBus**
-19.	The class should run and give you the result as below:
+
+
+15.Type  ‘ **:q**  ‘ and press Enter to exit the vi editor
+16.Go back to the parent working directory by typing ‘**cd**’ and press **Enter**.
+17.Type or paste **cd $CLIENT**, press **Enter**.
+18.Let’s run the class WhenComesTheBus.java by typing the command **mvn exec:java-Dexec.mainClass=se.ff.bsc.WhenComesTheBus**
+19.The class should run and give you the result as below:
 
  ![](Images/WhenComesTheBusResult.png) 
 
 #Pact Test WhenComesTheBusTest.java
 Ok let’s now create the pact file.  The test that we are going to write is based on an example I picked from pact-jvm. 
+
+
 20.	Let’s clear the path by typing **cd** and then **Enter**.
 21.	Now let’s write our test class WhenComesTheBusTest.java. I have already created a shell class for that. Type in **cd $BUSTEST**, press **Enter**.
-22.	 Type in **vi WhenComesTheBusTest.java** and then press **Enter**.
+22. Type in **vi WhenComesTheBusTest.java** and then press **Enter**.
 23.	You should now see an empty class **WhenComesTheBusTest.java**. Copy the code below and paste it in the vi editor. (**Press i to make vi in edit mode**)
 In the code below  we add the pact rule to represent our provider. The hostname and port are optional. If left out, it will default to 127.0.0.1 and a random available port. You can get the URL and port from the pact provider rule.
  We are using Port 8112 which will create a mock service. And when we run the pact verification method, doTest(), the mock service will get populated with the information that we setup in the Pact annotated method. 
