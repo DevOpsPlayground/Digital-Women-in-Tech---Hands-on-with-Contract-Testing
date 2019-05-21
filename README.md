@@ -103,7 +103,7 @@ This class uses port 8111 as default port. It has the method checkEta() that che
 15.Type  ‘ **:q**  ‘ and press Enter to exit the vi editor.  
 16.Go back to the parent working directory by typing ‘**cd**’ and press **Enter**.  
 17.Type or paste **cd $CLIENT**, press **Enter**.  
-18.Let’s run the class WhenComesTheBus.java by typing the command **mvn. exec:java-Dexec.mainClass=se.ff.bsc.WhenComesTheBus**.  
+18.Let’s run the class WhenComesTheBus.java by typing the command **mvn.exec:java-Dexec.mainClass=se.ff.bsc.WhenComesTheBus**.  
 19.The class should run and give you the result as below:  
 
 ![](Images/WhenComesTheBusResult.png) 
@@ -181,7 +181,7 @@ You can see in the above json file that it is a pact between provider **BusServi
 30.	Type  ‘ **:q**  ‘ and press **Enter** to exit the vi editor.  
 
 #Pact Broker 
-We will be using a docker pact broker. I have used an existing pack broker. Lets start the pack broker which is on a docker compose
+We will be using a docker pact broker. I have used an existing pack broker. Lets start the pack broker which is on a docker compose  
 31.	Type ‘ **cd** ‘ and **Enter** to go to root directory.   
 32.	Type **cd $BROKER**.  
 33.	This folder contains the file **docker-compose.yml** file. Type in **docker-compose up**.  
