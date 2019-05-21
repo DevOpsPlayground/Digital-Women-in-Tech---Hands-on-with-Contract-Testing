@@ -78,7 +78,7 @@ Once you are successfully logged in to your instance, follow the steps below to 
 5. The above step will open the class BusCtrl.java in vi terminal, which will look like this. 
 ![](Images/BusCtrl.png)
 
-This is the bus application (spring boot) that has a controller, BusCtrl. This service takes station and bus number as input variables and then it uses the method getEtaBasedOnGpsAndOtherAdancedStuff(). This method returns an integer which then creates a BusInfo object with station number and the time left.
+This is the bus application (spring boot) that has a controller, BusCtrl. This service takes station and bus number as input variables and then it uses the method getEtaBasedOnGpsAndOtherAdancedStuff(). This method returns an integer which then creates a BusInfo object with station number and the time left.  
 6. Type ‘ **:q** ‘ and press **Enter**. This will take you back to your present working directory.    
 7. Type ‘**cd**’ and press **Enter**.   
 8. Type **cd $BUSSPRINGBOOT**, Press **Enter**.  
