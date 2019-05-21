@@ -83,7 +83,7 @@ This is the bus application (spring boot) that has a controller, BusCtrl. This s
 7. Type ‘**cd**’ and press **Enter**.   
 8. Type **cd $BUSSPRINGBOOT**, Press **Enter**.  
 9. Now start the spring boot service by giving the command: **mvn spring-boot:run**.  
-10. Go to browser/new tab and type **http://<address of your instance>:8111/bus/Central_station/60**.  
+10. Go to browser/new tab and type **http://address of your instance:8111/bus/Central_station/60**.  
 
 ##Class WhenComesTheBus.java (Client)  
 We can now write out client side test.    
@@ -160,7 +160,6 @@ In the **@PactVerification()** method, we first set the root directory for the p
 ![](Images/WhenComesTheBusTestResult.png)  
 27.	By running the above pact test will create a json pact file in the location **/PactTest/client/target/pacts**.  
 28.	Once you’re in that directory, type the command **vi BusServiceClient-BusService.json**.  
-
 #Pact File  
 29.	By entering the command in the above step, you will see the json pact file in vi editor.  
 ![](Images/PactFile.png)  
