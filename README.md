@@ -110,33 +110,35 @@ Ok let’s now create the pact file.  The test that we are going to write is bas
 In the code below  we add the pact rule to represent our provider. The hostname and port are optional. If left out, it will default to 127.0.0.1 and a random available port. You can get the URL and port from the pact provider rule.
  We are using Port 8112 which will create a mock service. And when we run the pact verification method, doTest(), the mock service will get populated with the information that we setup in the Pact annotated method. 
 
+```java
 @Rule
 public PactProviderRuleMk2 provider = new PactProviderRuleMk2("BusService", "localhost", 8112, this);
 
-   @Pact(consumer = "BusServiceClient")
-    public RequestResponsePact createPact(PactDslWithProvider builder) {
-        Map<String, String> headers = new HashMap();
-        headers.put("Content-Type", "application/json");
+@Pact(consumer = "BusServiceClient")
+public RequestResponsePact createPact(PactDslWithProvider builder) {
+    Map<String, String> headers = new HashMap();
+    headers.put("Content-Type", "application/json");
 
 
-        DslPart etaResults = new PactDslJsonBody()
-                .stringType("station","Hammersmith")
-                .stringType("nr","613")
-                .integerType("eta",4)
-                .asBody();
+    DslPart etaResults = new PactDslJsonBody()
+            .stringType("station","Hammersmith")
+            .stringType("nr","613")
+            .integerType("eta",4)
+            .asBody();
 
-        RequestResponsePact result =  builder
-                .given("There is a bus with number 613 arriving to Hammersmith bus station")
-                .uponReceiving("A request for eta for bus number 613 to Hammersmith bus station")
-                .path("/bus/Hammersmith/613")
-                .method("GET")
-                .willRespondWith()
-                .status(200)
-                .headers(headers)
-                .body(etaResults).toPact();
+    RequestResponsePact result =  builder
+            .given("There is a bus with number 613 arriving to Hammersmith bus station")
+            .uponReceiving("A request for eta for bus number 613 to Hammersmith bus station")
+            .path("/bus/Hammersmith/613")
+            .method("GET")
+            .willRespondWith()
+            .status(200)
+            .headers(headers)
+            .body(etaResults).toPact();
 
-        return result;
-    }
+    return result;
+}
+```
 
 
    @Test
