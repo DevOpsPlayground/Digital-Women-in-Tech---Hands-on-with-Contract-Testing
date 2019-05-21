@@ -138,8 +138,6 @@ public RequestResponsePact createPact(PactDslWithProvider builder) {
 
     return result;
 }
-```
-
 
    @Test
 @PactVerification()
@@ -149,6 +147,7 @@ System.setProperty("pact.rootDir","../pacts");  // Change output dir for generat
         System.out.println("According to test eta="+eta);
         assertTrue(eta >= 0);
     }
+```
 
 In the above code, once the **@PactVerification()** method is run, the mock service will get populated with the information that is setup in the **@Pact** annotated method. In that method we declare the **PactDslJsonBody()**, where we say that we are depending on a string type named ‘station’, string type named ‘nr’ and a integer type named ‘eta’. These are the things that we need from the consumer. We also say that the status should be 200 and the header should be what we have given in **headers.put("Content-Type", "application/json")**.
 In the **@PactVerification()** method, we first set the root directory for the pact file to be created in. In the next step than we use the class WhenComesTheBus at the provider port, which means that it won’t use the live application data but the mock/virtual data. Than the method **checkEta** is called with station name and bus number.  
