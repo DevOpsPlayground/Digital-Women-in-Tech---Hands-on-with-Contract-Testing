@@ -200,8 +200,7 @@ We run BusStroContractTest.java class to verify that our live system works accor
 41.	Go back to the parent working directory by typing ‘**cd**’ and press **Enter**.
 42.	Type **cd $VERIFY** and press **Enter**.
 43.	Type **vi BusStopContractTest.java**
-
-![](Images/Images/BusStopContractTest.png)
+![picture alt](Images/Images/BusStopContractTest.png)
 
 It contains a **@State("There is a bus with number 613 arriving to Hammersmith bus station")**, which is given in the **WhenComesTheBus.java** class. This state was also given in the pact file as Provider state. The **@state** annotation is given in test to ensure for example to insert something in the database or other things to be in place for this test to work.  I have kept this test simple hence nothing is being inserted in this test and the state is just given as a statement. But if this state is removed entirely from this class, it will fail since in the contract we have given the provider to be in the state of  “There is a bus with number 613 arriving to Hammersmith bus station”.
 **@TestTarget** annotation targets the system to be tested. In the above example we are pointing it to port that the live system is running on. This test also needs to have access to the pact file in order for it to verify in the annotation @PactFolder("../client/target/pacts"). It is also necessary for it to be given the same name in @Provider("BusService") that is in the pact file for the provider. 
@@ -211,5 +210,4 @@ Let run this test now.
 45.	Type **mvn test** and press **Enter**
 
 The result should look like below.
- 
-![](Images/Images/BusStopContractTestResult.png)
+![picture alt](Images/Images/BusStopContractTestResult.png)
