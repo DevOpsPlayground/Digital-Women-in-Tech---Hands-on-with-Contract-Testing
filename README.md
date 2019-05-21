@@ -166,7 +166,6 @@ In the **@PactVerification()** method, we first set the root directory for the p
 ![](Images/PactFile.png)  
 You can see in the above json file that it is a pact between provider **BusService** and a consumer **BusServiceClient**. It contains the description, request method, path, the response and the body. A bit further down there are the **matchingRules**, which verifies that the station and nr matches type and the eta should be of type integer. We have also **providerStates**, which can be used for a test on the provider side.  
 30.	Type  ‘ **:q**  ‘ and press **Enter** to exit the vi editor.  
-
 #Pact Broker 
 We will be using a docker pact broker. I have used an existing pack broker. Lets start the pack broker which is on a docker compose  
 31.	Type ‘ **cd** ‘ and **Enter** to go to root directory.   
