@@ -154,7 +154,6 @@ System.setProperty("pact.rootDir","../pacts");  // Change output dir for generat
 
 In the above code, once the **@PactVerification()** method is run, the mock service will get populated with the information that is setup in the **@Pact** annotated method. In that method we declare the **PactDslJsonBody()**, where we say that we are depending on a string type named ‘station’, string type named ‘nr’ and a integer type named ‘eta’. These are the things that we need from the consumer. We also say that the status should be 200 and the header should be what we have given in **headers.put("Content-Type", "application/json")**.
 In the **@PactVerification()** method, we first set the root directory for the pact file to be created in. In the next step than we use the class WhenComesTheBus at the provider port, which means that it won’t use the live application data but the mock/virtual data. Than the method **checkEta** is called with station name and bus number.  
-
 24.	Save the above code by typing  ‘**:wq** ’ and press **Enter**.   
 25.	Run the testcase WhenComesTheBusTest.java by going back to root directory. Type ‘ **cd** ‘ press Enter. Type or paste **cd $CLIENT**, press **Enter**.   
 26.	 Type ‘ **mvn test** ‘ and press **Enter**. You should see the below result in the terminal.   
@@ -162,11 +161,9 @@ In the **@PactVerification()** method, we first set the root directory for the p
 27.	By running the above pact test will create a json pact file in the location **/PactTest/client/target/pacts**.  
 28.	Once you’re in that directory, type the command **vi BusServiceClient-BusService.json**.  
 
-#Pact File
-
+#Pact File  
 29.	By entering the command in the above step, you will see the json pact file in vi editor.  
-![](Images/Images/PactFile.png)
-
+![](Images/PactFile.png)  
 You can see in the above json file that it is a pact between provider **BusService** and a consumer **BusServiceClient**. It contains the description, request method, path, the response and the body. A bit further down there are the **matchingRules**, which verifies that the station and nr matches type and the eta should be of type integer. We have also **providerStates**, which can be used for a test on the provider side.  
 30.	Type  ‘ **:q**  ‘ and press **Enter** to exit the vi editor.  
 
@@ -176,26 +173,22 @@ We will be using a docker pact broker. I have used an existing pack broker. Lets
 32.	Type **cd $BROKER**.  
 33.	This folder contains the file **docker-compose.yml** file. Type in **docker-compose up**.  
 34.	Open a separate tab on your browser and copy paste your linux instance address **<Linus instance address>:8113** which should open up your docker compose like below:  
-
-![](Images/Images/PackBroker.png)
+![](Images/Images/PackBroker.png)  
 35.	Currently your pack broker does not have your pact file. So let’s publish the pact file onto the pact broker. For this we need to go to the client folder. Type’ **cd** ‘ and Enter, then type **cd $CLIENT**, press **Enter**.   
 36.	Let’s publish the pact file by giving the command **mvn pact:publish**.
 37.	Go to the tab that has your docker compose running and refresh the page. You should now see your pact file on it as below.   
- ![](Images/Images/PublishedPactBroker.png)  
+![](Images/Images/PublishedPactBroker.png)  
 38.	You might have noticed that the pact file is not verified on your broker. In order to verify we need to go to be in the **bs** folder, which has the spring boot application. Lets go up one folder in our current directory and then type ‘ **cd bs** ‘.  
 39.	Type in **mvn pact:verify** .  
 40.	The above command should verify your pact file on your pact broker. Refresh the tab on which your pack broker is running and it should display the last verified time.   
- 
 If you click the link **BusServiceClient**, you will be displayed a graphical image of the BusServiceClient relationship with any other service. 
-![](Images/Images/PactbrokerNetwork.png)
-
+![](Images/Images/PactbrokerNetwork.png)  
 #BusStopContractTest (Provider)
 We run BusStroContractTest.java class to verify that our live system works according to the client specification/contract that is created.  
 41.	Go back to the parent working directory by typing ‘**cd**’ and press **Enter**.  
 42.	Type **cd $VERIFY** and press **Enter**.  
 43.	Type **vi BusStopContractTest.java**.  
-![](Images/BusStopContractTest.png)
-
+![](Images/BusStopContractTest.png)  
 It contains a **@State("There is a bus with number 613 arriving to Hammersmith bus station")**, which is given in the **WhenComesTheBus.java** class. This state was also given in the pact file as Provider state. The **@state** annotation is given in test to ensure for example to insert something in the database or other things to be in place for this test to work.  I have kept this test simple hence nothing is being inserted in this test and the state is just given as a statement. But if this state is removed entirely from this class, it will fail since in the contract we have given the provider to be in the state of  “There is a bus with number 613 arriving to Hammersmith bus station”.  
 **@TestTarget** annotation targets the system to be tested. In the above example we are pointing it to port that the live system is running on. This test also needs to have access to the pact file in order for it to verify in the annotation @PactFolder("../client/target/pacts"). It is also necessary for it to be given the same name in @Provider("BusService") that is in the pact file for the provider.  
 Let run this test now.  
