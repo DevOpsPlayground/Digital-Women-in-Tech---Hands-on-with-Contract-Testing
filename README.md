@@ -10,7 +10,7 @@ Role: Continuous Delivery Consultant
 
 Email: Samer.Naqvi@ecs-digital.co.uk
 
-LinkedIn: Let's connect (https://www.linkedin.com/in/samer-naqvi-8b27a3/)
+LinkedIn: [Let's connect](https://www.linkedin.com/in/samer-naqvi-8b27a3/)
 
 #Requirements
 •	Jdk 
