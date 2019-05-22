@@ -209,7 +209,7 @@ In the **@PactVerification()** method, we first set the root directory for the p
    vi target/pacts/BusServiceClient-BusService.json
  ``` 
 
-#**Pact File**    
+# **Pact File**    
 
 23.	By entering the command in the above step, you will see the json pact file in vi editor.  
 
@@ -221,7 +221,7 @@ You can see in the above json file that it is a pact between provider **BusServi
     :q
  ```   
   
-#**BusStopContractTest(Provider)**
+# **BusStopContractTest(Provider)**
   
 We run BusStroContractTest.java class to verify that our live system works according to the client specification/contract that is created.  
 
@@ -246,7 +246,7 @@ The result should look like below.
 
 ![](Images/BusStopContractTestResult.png)
 
-#**Pact Broker**   
+# **Pact Broker**   
 
 We will be using a docker pact broker. I have used an existing pack broker. Lets start the pack broker which is on a docker compose     
 28.	Type **cd $BROKER**.  
