@@ -5,7 +5,8 @@
 # **Introduction**
 On this meetup, we will walk you through what Contract testing. We will explain how PACT works and do a hands-on workshop creating a pact between two micro services and testing it.
 
-Name: Samer Naqvi
+Name: Samer Naqvi  
+
 Role: Continuous Delivery Consultant
 
 Email: Samer.Naqvi@ecs-digital.co.uk
@@ -44,10 +45,7 @@ If you wish to use your own machine on this playground, please make sure you hav
 •	[Pact Broker](https://github.com/pact-foundation/pact-broker-docker)
 
 # **Survey Link** 
-We would love to hear your feedback and make improvements on the way we deliver our playground session. Please click the survey to participate.
-
-
-
+We would love to hear your feedback and make improvements on the way we deliver our playground session. Please click the [survey]https://qabook.typeform.com/to/SFjrAQ to participate.
 
 
 
