@@ -243,7 +243,7 @@ We will be using a docker pact broker. I have used an existing pack broker. Lets
    mvn pact:publish
  ``` 
 30.	Go to the tab that has your docker compose running and refresh the page. You should now see your pact file on it as below.   
-![](Images/Images/PublishedPactBroker.png)  
+![](Images/PublishedPactBroker.png)  
 31.	You might have noticed that the pact file is not verified on your broker. In order to verify we need to go to be in the **bs** folder, which has the spring boot application. 
 
 ```
@@ -257,7 +257,7 @@ We will be using a docker pact broker. I have used an existing pack broker. Lets
 33.	The above command should verify your pact file on your pact broker. Refresh the tab on which your pack broker is running and it should display the last verified time.   
 If you click the link **BusServiceClient**, you will be displayed a graphical image of the BusServiceClient relationship with any other service. 
 
-![](Images/Images/PactbrokerNetwork.png)  
+![](Images/PactbrokerNetwork.png)  
   
 #**BusStopContractTest(Provider)**
   
