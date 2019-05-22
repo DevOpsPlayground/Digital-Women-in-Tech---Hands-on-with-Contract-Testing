@@ -220,47 +220,12 @@ You can see in the above json file that it is a pact between provider **BusServi
  ```
     :q
  ```   
-
-#**Pact Broker**   
-
-We will be using a docker pact broker. I have used an existing pack broker. Lets start the pack broker which is on a docker compose     
-25.	Type **cd $BROKER**.  
-26.	This folder contains the file **docker-compose.yml** file. Type in **docker-compose up**.  
-27.	Open a separate tab on your browser and copy paste your linux instance address **<Linus instance address>:8113** which should open up your docker compose like below:  
-![](Images/Images/PackBroker.png)  
-  
-28.	Currently your pack broker does not have your pact file. So let’s publish the pact file onto the pact broker. For this we need to go to the client folder. Type:
-
- ```
-   cd $CLIENT
- ``` 
-
-29.	Let’s publish the pact file by giving the command 
-
-```
-   mvn pact:publish
- ``` 
-30.	Go to the tab that has your docker compose running and refresh the page. You should now see your pact file on it as below.   
-![](Images/PublishedPactBroker.png)  
-31.	You might have noticed that the pact file is not verified on your broker. In order to verify we need to go to be in the **bs** folder, which has the spring boot application. 
-
-```
-   cd $BUSSPRINGBOOT
- ``` 
-32.	To run the verify the command use:
-
-```
-   mvn pact:verify
- ```  
-33.	The above command should verify your pact file on your pact broker. Refresh the tab on which your pack broker is running and it should display the last verified time.   
-If you click the link **BusServiceClient**, you will be displayed a graphical image of the BusServiceClient relationship with any other service. 
-
-![](Images/PactbrokerNetwork.png)  
   
 #**BusStopContractTest(Provider)**
   
 We run BusStroContractTest.java class to verify that our live system works according to the client specification/contract that is created.  
-34.	To view the provier class type:
+
+25.	To view the provier class type:
 ```
    vi $VERIFY/BusStopContractTest.java
  ``` 
@@ -270,8 +235,8 @@ It contains a **@State("There is a bus with number 613 arriving to Hammersmith b
 **@TestTarget** annotation targets the system to be tested. In the above example we are pointing it to port that the live system is running on. This test also needs to have access to the pact file in order for it to verify in the annotation @PactFolder("../client/target/pacts"). It is also necessary for it to be given the same name in @Provider("BusService") that is in the pact file for the provider.  
 Let run this test now.  
 
-35. Let’s go to main directory verify i.e. **/verifier**.  
-36. To run the provider test use:
+26.  Let’s go to main directory verify i.e. **/verifier**.  
+27.  To run the provider test use:
 
 ```
    mvn test
@@ -280,3 +245,39 @@ Let run this test now.
 The result should look like below.
 
 ![](Images/BusStopContractTestResult.png)
+
+#**Pact Broker**   
+
+We will be using a docker pact broker. I have used an existing pack broker. Lets start the pack broker which is on a docker compose     
+28.	Type **cd $BROKER**.  
+29.	This folder contains the file **docker-compose.yml** file. Type in **docker-compose up**.  
+30.	Open a separate tab on your browser and copy paste your linux instance address **<Linus instance address>:8113** which should open up your docker compose like below:  
+![](Images/Images/PackBroker.png)  
+  
+30.	Currently your pack broker does not have your pact file. So let’s publish the pact file onto the pact broker. For this we need to go to the client folder. Type:
+
+ ```
+   cd $CLIENT
+ ``` 
+
+31.	Let’s publish the pact file by giving the command 
+
+```
+   mvn pact:publish
+ ``` 
+32.	Go to the tab that has your docker compose running and refresh the page. You should now see your pact file on it as below.   
+![](Images/PublishedPactBroker.png)  
+31.	You might have noticed that the pact file is not verified on your broker. In order to verify we need to go to be in the **bs** folder, which has the spring boot application. 
+
+```
+   cd $BUSSPRINGBOOT
+ ``` 
+33.	To run the verify the command use:
+
+```
+   mvn pact:verify
+ ```  
+34.	The above command should verify your pact file on your pact broker. Refresh the tab on which your pack broker is running and it should display the last verified time.   
+If you click the link **BusServiceClient**, you will be displayed a graphical image of the BusServiceClient relationship with any other service. 
+
+![](Images/PactbrokerNetwork.png)  
