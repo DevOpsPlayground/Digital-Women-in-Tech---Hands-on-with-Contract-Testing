@@ -250,7 +250,11 @@ The result should look like below.
 
 We will be using a docker pact broker. I have used an existing pack broker which is running on your linux instance address **<Linus instance address>:8113**
     
-28.	Open a separate tab on your browser and copy paste your linux instance address **<Linus instance address>:8113** which should open up your docker compose like below:  
+28.	Open a separate tab on your browser and copy paste your linux instance address 
+```
+ <Linus instance address>:8113
+ ``` 
+ which should open up your docker compose like below:  
 ![](Images/Images/PackBroker.png)  
   
 29.	Currently your pack broker does not have your pact file. So let’s publish the pact file onto the pact broker. For this we need to go to the client folder. Type:
