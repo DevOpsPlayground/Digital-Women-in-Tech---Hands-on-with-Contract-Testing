@@ -73,7 +73,7 @@ Once you are successfully logged in to your instance, follow the steps below to 
 
   - BROKER=**PactTest/dockerpactbroker** 
 
-  - VERIFY=**PactTest/verifyer/src/test/java/se/ff/bsv** 
+  - VERIFY=**PactTest/verifier/src/test/java/se/ff/bsv** 
 
 
 3. Lets view the spring boot class that will run our live system which gives an estimated bus arrival time. 
