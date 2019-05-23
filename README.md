@@ -248,26 +248,26 @@ The result should look like below.
 
 # **Pact Broker**   
 
-We will be using a docker pact broker. I have used an existing pack broker. Lets start the pack broker which is on a docker compose     
-28.	Type **cd $BROKER**.  
-29.	This folder contains the file **docker-compose.yml** file. Type in **docker-compose up**.  
-30.	Open a separate tab on your browser and copy paste your linux instance address **<Linus instance address>:8113** which should open up your docker compose like below:  
+We will be using a docker pact broker. I have used an existing pack broker which is running on your linux instance address **<Linus instance address>:8113**
+    
+28.	Open a separate tab on your browser and copy paste your linux instance address **<Linus instance address>:8113** which should open up your docker compose like below:  
 ![](Images/Images/PackBroker.png)  
   
-30.	Currently your pack broker does not have your pact file. So let’s publish the pact file onto the pact broker. For this we need to go to the client folder. Type:
+29.	Currently your pack broker does not have your pact file. So let’s publish the pact file onto the pact broker. For this we need to go to the client folder. Type:
 
  ```
    cd $CLIENT
  ``` 
 
-31.	Let’s publish the pact file by giving the command 
+30.	Let’s publish the pact file by giving the command 
 
 ```
    mvn pact:publish
  ``` 
-32.	Go to the tab that has your docker compose running and refresh the page. You should now see your pact file on it as below.   
-![](Images/PublishedPactBroker.png)  
-31.	You might have noticed that the pact file is not verified on your broker. In order to verify we need to go to be in the **bs** folder, which has the spring boot application. 
+31.	Go to the tab that has your docker compose running and refresh the page. You should now see your pact file on it as below.   
+![](Images/PublishedPactBroker.png)
+
+32.	You might have noticed that the pact file is not verified on your broker. In order to verify we need to go to be in the **bs** folder, which has the spring boot application. 
 
 ```
    cd $BUSSPRINGBOOT
@@ -281,3 +281,5 @@ We will be using a docker pact broker. I have used an existing pack broker. Lets
 If you click the link **BusServiceClient**, you will be displayed a graphical image of the BusServiceClient relationship with any other service. 
 
 ![](Images/PactbrokerNetwork.png)  
+
+Pact broker allows you to release customer value quickly and confidently by deploying your services independently and avoiding the bottleneck of integration tests. It also solves the problem of how to share contracts and verification results between consumer and provider projects.
