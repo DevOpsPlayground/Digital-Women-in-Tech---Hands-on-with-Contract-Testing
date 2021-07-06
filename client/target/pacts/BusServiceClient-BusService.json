@@ -1,0 +1,69 @@
+{
+  "provider": {
+    "name": "BusService"
+  },
+  "consumer": {
+    "name": "BusServiceClient"
+  },
+  "interactions": [
+    {
+      "description": "A request for eta for bus number 613 to Hammersmith bus station",
+      "request": {
+        "method": "GET",
+        "path": "/bus/Hammersmith/613"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "eta": 4,
+          "nr": "613",
+          "station": "Hammersmith"
+        },
+        "matchingRules": {
+          "body": {
+            "$.station": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.nr": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.eta": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "There is a bus with number 613 arriving to Hammersmith bus station"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "3.6.5"
+    }
+  }
+}
